@@ -1,0 +1,4 @@
+# Files DVC should never look at when computing hashes or walking directories.
+# Same syntax as .gitignore.
+*.tmp
+.DS_Store

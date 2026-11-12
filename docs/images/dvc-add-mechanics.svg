@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 440" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowT" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3AAFCB"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="940" height="440" rx="14" fill="#ffffff"/>
+
+  <text x="470" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#13355E">What dvc add does</text>
+  <text x="470" y="64" text-anchor="middle" font-size="14" font-family="SFMono-Regular, Consolas, monospace" fill="#EB5B38">dvc add data/raw/churn.csv</text>
+
+  <!-- source file -->
+  <g>
+    <rect x="40" y="181" width="200" height="88" rx="10" fill="#F1ECFD" stroke="#8B5CF6" stroke-width="2.2"/>
+    <text x="140" y="213" text-anchor="middle" font-size="14" font-weight="600" font-family="SFMono-Regular, Consolas, monospace" fill="#13355E">churn.csv</text>
+    <text x="140" y="235" text-anchor="middle" font-size="12" fill="#5a6b80">the large file</text>
+    <text x="140" y="253" text-anchor="middle" font-size="12" fill="#5a6b80">558 KB, not for Git</text>
+  </g>
+
+  <!-- elbow connectors: one trunk out of the file, a branch into each result -->
+  <g stroke="#3AAFCB" stroke-width="2.4" fill="none">
+    <path d="M244,225 H302"/>
+    <path d="M302,121 V339"/>
+    <path d="M302,121 H396" marker-end="url(#arrowT)"/>
+    <path d="M302,225 H396" marker-end="url(#arrowT)"/>
+    <path d="M302,339 H396" marker-end="url(#arrowT)"/>
+  </g>
+  <g font-size="11.5" fill="#3AAFCB" font-weight="600" text-anchor="middle">
+    <text x="349" y="112">copy by hash</text>
+    <text x="349" y="216">write pointer</text>
+    <text x="349" y="330">ignore original</text>
+  </g>
+
+  <!-- result 1: cache -->
+  <g>
+    <rect x="400" y="78" width="500" height="86" rx="10" fill="#F1ECFD" stroke="#8B5CF6" stroke-width="2.2"/>
+    <text x="416" y="104" font-size="14" font-weight="700" fill="#13355E">.dvc/cache/</text>
+    <text x="416" y="126" font-size="12.5" font-family="SFMono-Regular, Consolas, monospace" fill="#13355E">3c/a6d63d582f4911c4eaffa472e2e3f7</text>
+    <text x="416" y="148" font-size="12" fill="#5a6b80">the actual bytes, named by MD5. Git-ignored; pushed by <tspan font-family="SFMono-Regular, Consolas, monospace" fill="#13355E">dvc push</tspan></text>
+  </g>
+
+  <!-- result 2: pointer -->
+  <g>
+    <rect x="400" y="192" width="500" height="66" rx="10" fill="#FDEBE6" stroke="#EB5B38" stroke-width="2.2"/>
+    <text x="416" y="218" font-size="14" font-weight="700" font-family="SFMono-Regular, Consolas, monospace" fill="#13355E">churn.csv.dvc</text>
+    <text x="416" y="240" font-size="12" fill="#5a6b80">tiny YAML pointer holding the hash. You <tspan font-family="SFMono-Regular, Consolas, monospace" fill="#13355E">git add</tspan> this</text>
+  </g>
+
+  <!-- result 3: gitignore -->
+  <g>
+    <rect x="400" y="306" width="500" height="66" rx="10" fill="#EEF1F5" stroke="#9AA7B5" stroke-width="2.2"/>
+    <text x="416" y="332" font-size="14" font-weight="700" font-family="SFMono-Regular, Consolas, monospace" fill="#13355E">.gitignore  +=  /churn.csv</text>
+    <text x="416" y="354" font-size="12" fill="#5a6b80">so Git never sees the big file by accident</text>
+  </g>
+
+  <text x="470" y="410" text-anchor="middle" font-size="13" fill="#5a6b80">Commit the pointer, not the data. The hash <tspan font-family="SFMono-Regular, Consolas, monospace" fill="#13355E">is</tspan> the version.</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowNavy" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#13355E"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="300" rx="14" fill="#ffffff"/>
+
+  <text x="500" y="42" text-anchor="middle" font-size="20" font-weight="700" fill="#13355E">One branch per module</text>
+  <text x="500" y="66" text-anchor="middle" font-size="14" fill="#5a6b80">Each module-N branch marks where module N begins; main is the finished project after Module 5</text>
+
+  <!-- main line -->
+  <line x1="70" y1="200" x2="905" y2="200" stroke="#13355E" stroke-width="3" marker-end="url(#arrowNavy)"/>
+
+  <!-- commit dots: initial scaffold + one per module -->
+  <g fill="#3AAFCB" stroke="#13355E" stroke-width="2.5">
+    <circle cx="120" cy="200" r="9"/>
+    <circle cx="260" cy="200" r="9"/>
+    <circle cx="400" cy="200" r="9"/>
+    <circle cx="540" cy="200" r="9"/>
+    <circle cx="680" cy="200" r="9"/>
+    <circle cx="820" cy="200" r="9"/>
+  </g>
+
+  <!-- branch labels (above) with connectors -->
+  <g font-size="12.5" font-family="SFMono-Regular, Consolas, monospace" text-anchor="middle">
+    <g stroke="#3AAFCB" stroke-width="1.6" stroke-dasharray="4 3">
+      <line x1="120" y1="146" x2="120" y2="191"/>
+      <line x1="260" y1="146" x2="260" y2="191"/>
+      <line x1="400" y1="146" x2="400" y2="191"/>
+      <line x1="540" y1="146" x2="540" y2="191"/>
+      <line x1="680" y1="146" x2="680" y2="191"/>
+      <line x1="820" y1="146" x2="820" y2="191"/>
+    </g>
+    <g>
+      <rect x="65" y="114" width="110" height="32" rx="8" fill="#E6F5F9" stroke="#3AAFCB" stroke-width="1.8"/>
+      <text x="120" y="135" fill="#13355E">module-1</text>
+      <rect x="205" y="114" width="110" height="32" rx="8" fill="#E6F5F9" stroke="#3AAFCB" stroke-width="1.8"/>
+      <text x="260" y="135" fill="#13355E">module-2</text>
+      <rect x="345" y="114" width="110" height="32" rx="8" fill="#E6F5F9" stroke="#3AAFCB" stroke-width="1.8"/>
+      <text x="400" y="135" fill="#13355E">module-3</text>
+      <rect x="485" y="114" width="110" height="32" rx="8" fill="#E6F5F9" stroke="#3AAFCB" stroke-width="1.8"/>
+      <text x="540" y="135" fill="#13355E">module-4</text>
+      <rect x="625" y="114" width="110" height="32" rx="8" fill="#E6F5F9" stroke="#3AAFCB" stroke-width="1.8"/>
+      <text x="680" y="135" fill="#13355E">module-5</text>
+      <rect x="778" y="114" width="84" height="32" rx="8" fill="#13355E" stroke="#3AAFCB" stroke-width="1.8"/>
+      <text x="820" y="135" fill="#ffffff">main</text>
+    </g>
+  </g>
+
+  <!-- commit labels (below) -->
+  <g text-anchor="middle" font-size="12" fill="#8a97a8" font-style="italic">
+    <text x="120" y="234">scaffold</text>
+    <text x="260" y="234">end of M1</text>
+    <text x="400" y="234">end of M2</text>
+    <text x="540" y="234">end of M3</text>
+    <text x="680" y="234">end of M4</text>
+    <text x="820" y="234">end of M5</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="12" fill="#13355E">
+    <circle cx="352" cy="270" r="7" fill="#3AAFCB" stroke="#13355E" stroke-width="2"/>
+    <text x="366" y="274" text-anchor="start">commit</text>
+    <rect x="446" y="263" width="16" height="14" rx="4" fill="#E6F5F9" stroke="#3AAFCB" stroke-width="1.8"/>
+    <text x="468" y="274" text-anchor="start">where a module starts</text>
+  </g>
+</svg>
