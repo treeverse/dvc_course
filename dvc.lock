@@ -74,16 +74,16 @@ stages:
     params:
       params.yaml:
         train:
-          model_type: randomforest
-          n_estimators: 100
+          model_type: xgboost
+          n_estimators: 50
           max_depth: 0
-          learning_rate: 0.1
+          learning_rate: 0.2
           random_state: 42
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 9e2b3cc81544830f9d1dc26282b5153d
-      size: 18757162
+      md5: dd1a6da2f0e8b68d725dd2df0fcb2258
+      size: 170302
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -93,14 +93,14 @@ stages:
       size: 224233
     - path: models/model.pkl
       hash: md5
-      md5: 9e2b3cc81544830f9d1dc26282b5153d
-      size: 18757162
+      md5: dd1a6da2f0e8b68d725dd2df0fcb2258
+      size: 170302
     - path: src/evaluate.py
       hash: md5
-      md5: 0467301fd0faf9f2aaf1c7d69578ac6f
-      size: 924
+      md5: 1c1408b2415792e2567e2e8bf1a6e740
+      size: 1872
     outs:
     - path: metrics/metrics.json
       hash: md5
-      md5: b92f8863846688e544d6218bb75092b3
+      md5: 8009445e88edb495d55ec712c9d87cae
       size: 39

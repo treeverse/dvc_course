@@ -1,15 +1,17 @@
 base:
   target: churn
-  categorical: [country, gender]
-  drop: [customer_id]
-
+  categorical:
+  - country
+  - gender
+  drop:
+  - customer_id
 prepare:
   test_size: 0.2
   random_state: 42
 
 train:
-  model_type: randomforest   # randomforest | xgboost
-  n_estimators: 100
+  model_type: xgboost        # randomforest | xgboost
+  n_estimators: 50
   max_depth: 0               # 0 means "no limit" (None)
-  learning_rate: 0.1         # used by xgboost only
+  learning_rate: 0.2         # used by xgboost only
   random_state: 42

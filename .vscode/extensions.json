@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    "lakeFS.lakefs-dvc-pack",
+    "ms-python.python"
+  ]
+}
