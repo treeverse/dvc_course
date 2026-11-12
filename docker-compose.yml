@@ -1,0 +1,31 @@
+# Run lakeFS locally for Module 5.
+#
+#   docker compose up
+#
+# Then open http://localhost:8000 and log in with the credentials below.
+# This uses lakeFS's local block store and local metadata, so it needs no
+# external database or S3 bucket. Both the data blocks and the version metadata
+# persist in the ./lakefs/data volume (git-ignored), so your repositories and
+# commits survive a `docker compose down && up`. For production you would back
+# lakeFS with S3/GCS/Azure and a real database; the workflow is identical.
+
+services:
+  lakefs:
+    image: treeverse/lakefs:1
+    ports:
+      - "8000:8000"
+    environment:
+      - LAKEFS_DATABASE_TYPE=local
+      # Keep the metadata KV store inside the mounted volume too. Without this it
+      # defaults to an unmounted path and is lost on container recreation, which
+      # wipes every repo and commit while orphaning the data blocks.
+      - LAKEFS_DATABASE_LOCAL_PATH=/home/lakefs/data/metadata
+      - LAKEFS_BLOCKSTORE_TYPE=local
+      - LAKEFS_BLOCKSTORE_LOCAL_PATH=/home/lakefs/data/blockstore
+      - LAKEFS_AUTH_ENCRYPT_SECRET_KEY=CHANGE_ME_IN_PRODUCTION
+      - LAKEFS_INSTALLATION_USER_NAME=admin
+      - LAKEFS_INSTALLATION_ACCESS_KEY_ID=AKIAIOSFOLKFSSAMPLES
+      - LAKEFS_INSTALLATION_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    volumes:
+      - ./lakefs/data:/home/lakefs/data
+    entrypoint: ["/app/lakefs", "run", "--local-settings"]

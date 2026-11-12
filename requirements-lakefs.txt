@@ -1,0 +1,3 @@
+# Extra dependency for Module 5 only (the lakeFS high-level Python SDK).
+#   uv pip install -r requirements-lakefs.txt
+lakefs==0.16.0
