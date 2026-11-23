@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-# DVC by lakeFS: Data Scientist Course
+# Reproducible Machine Learning with DVC by lakeFS
 
 This course teaches [DVC](https://dvc.org) 3.x through one small ML project, a churn model for a retail bank, that you build up over five modules.
 You version the dataset and the model, then turn the training script into a reproducible pipeline.
