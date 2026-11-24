@@ -45,7 +45,7 @@ brew install libomp                # macOS only; Linux/Windows wheels bundle it
 | Fetch the churn CSV with `dvc get`. It downloads a file from any Git or DVC repository without tracking it, and works before `dvc init`. Here the source is this course repo, which keeps a copy under `.data/`. |
 
 ```bash
-dvc get git@github.com:alex000kim/dvc_course.git .data/churn.csv -o data/raw/churn.csv
+dvc get https://github.com/treeverse/dvc_course .data/churn.csv -o data/raw/churn.csv
 ```
 
 ```bash
