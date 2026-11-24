@@ -6,7 +6,7 @@ This module replaces the standalone training script with a four-stage DVC pipeli
 |-------------|-------|
 | Continue from Module 1 | Raw CSV already tracked by DVC |
 | Or `git checkout module-2` | Configure your remote and pull the CSV |
-| No remote yet | `dvc get git@github.com:alex000kim/dvc_course.git .data/churn.csv -o data/raw/churn.csv` restores the raw input |
+| No remote yet | `dvc get https://github.com/treeverse/dvc_course .data/churn.csv -o data/raw/churn.csv` restores the raw input |
 
 | Cleanup |
 |---------|
