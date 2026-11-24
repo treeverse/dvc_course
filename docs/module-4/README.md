@@ -7,7 +7,7 @@ This module is about working on the project with other people. You clone and reb
 | Continue from Module 3 | Tuned XGBoost workspace |
 | Or `git checkout module-4` | Checkpoint F1 0.5891 |
 | Fresh checkout | Configure a DVC remote and pull |
-| No remote | `dvc get git@github.com:alex000kim/dvc_course.git .data/churn.csv -o data/raw/churn.csv && dvc repro` |
+| No remote | `dvc get https://github.com/treeverse/dvc_course .data/churn.csv -o data/raw/churn.csv && dvc repro` |
 
 | Clone and pull |
 |----------------|
