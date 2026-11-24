@@ -5,7 +5,7 @@ This module adds run tracking. The pipeline logs each run to a local MLflow, and
 | Start state | Check |
 |-------------|-------|
 | Continue from Module 2 | Four-stage RandomForest pipeline |
-| Or `git checkout module-3` | Point `storage` at your remote (Module 1, "Later checkouts"), then `dvc pull`; or `dvc get git@github.com:alex000kim/dvc_course.git .data/churn.csv -o data/raw/churn.csv && dvc repro` |
+| Or `git checkout module-3` | Point `storage` at your remote (Module 1, "Later checkouts"), then `dvc pull`; or `dvc get https://github.com/treeverse/dvc_course .data/churn.csv -o data/raw/churn.csv && dvc repro` |
 | Baseline | F1 0.5639 |
 | First sanity check | `wc -l data/raw/churn.csv` must be 10,001 |
 | macOS | `brew install libomp` once, or the XGBoost runs below fail to import |
