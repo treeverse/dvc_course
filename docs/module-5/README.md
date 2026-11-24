@@ -110,7 +110,7 @@ python src/migrate_to_lakefs.py
 | Fresh checkout with `storage` still pointing at the private demo bucket: skip `dvc pull`, rebuild instead, then run the script. |
 
 ```bash
-dvc get git@github.com:alex000kim/dvc_course.git .data/churn.csv -o data/raw/churn.csv   # regenerate data/raw/churn.csv
+dvc get https://github.com/treeverse/dvc_course .data/churn.csv -o data/raw/churn.csv   # regenerate data/raw/churn.csv
 dvc repro                             # rebuild prepared data, features, model, metrics
 python src/migrate_to_lakefs.py
 ```
