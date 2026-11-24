@@ -6,7 +6,7 @@ lakeFS is data version control at scale. It sits as a layer on top of an object 
 |-------------|-------|
 | Continue from Module 4 | Tuned project with DVC pipeline |
 | Or `git checkout module-5` | Then restore from your DVC remote |
-| No remote | `dvc get git@github.com:alex000kim/dvc_course.git .data/churn.csv -o data/raw/churn.csv && dvc repro` |
+| No remote | `dvc get https://github.com/treeverse/dvc_course .data/churn.csv -o data/raw/churn.csv && dvc repro` |
 | Docker | Installed and running (top-level README, Requirements) |
 | New files | `docker-compose.yml`, `requirements-lakefs.txt`, `src/migrate_to_lakefs.py` |
 
