@@ -2,7 +2,7 @@
 dvc[s3]==3.67.1
 dvclive==3.49.1
 pygtrie==2.5.0  # transitive dep of dvc; 2.6.0 breaks sqltrie's longest_prefix
-mlflow==3.15.2
+mlflow==3.17.2
 scikit-learn==1.9.0
 xgboost==3.3.0
 pandas==2.3.3
